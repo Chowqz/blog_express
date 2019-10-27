@@ -86,3 +86,22 @@ INSERT INTO `user` VALUES (8, 'lisi', 'Chowqz', '6203a5d661b46c7d565fe891e2ca13a
 INSERT INTO `user` VALUES (14, 'wangwu', 'Chowqz', '6203a5d661b46c7d565fe891e2ca13ac', '0');
 
 SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE comment (
+  commentId int(11) PRIMARY KEY AUTO_INCREMENT,
+  articleId INT(11) NOT NULL,
+  content VARCHAR(100),
+  from_uid INT(11) NOT NULL,
+  createTime DATETIME DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_comment_article FOREIGN KEY(articleId) REFERENCES article(articleId)
+)
+
+
+CREATE TABLE comment_reply (
+  id int(11) PRIMARY KEY AUTO_INCREMENT,
+  commentId int(11) NOT NULL,
+  content VARCHAR(100),
+  from_uid INT(11) NOT NULL,
+  to_uid INT(11) DEFAULT NULL,
+  createTime DATETIME DEFAULT CURRENT_TIMESTAMP
+)
