@@ -76,4 +76,41 @@ router.post('/updateArticle', (req, res, next) => {
     })
 })
 
+router.post('/getArticleDetail', (req, res, next) => {
+    Article.getArticleDetail(req.body.articleId).then(queryData => {
+        res.json(successModel({
+            data: queryData
+        }))
+    }).catch(err => {
+        res.json(errorModel({
+            message: err
+        }))
+    })
+})
+
+router.post('/delArticle', loginCheck, (req, res, next) => {
+    let articleId = req.body.articleId;
+    if(!articleId) {
+        res.json(errorModel({
+            message: 'lack of articleId'
+        }))
+        return;
+    }
+    Article.delArticle(articleId, req.session.userId).then(delData => {
+        if(delData.affectedRows > 0) {
+            res.json(successModel({
+                message: 'del success'
+            }))
+            return;
+        }
+        res.json(errorModel({
+            message: 'del fail'
+        }))
+    }).catch(err => {
+        res.json(errorModel({
+            message: err
+        }))
+    })
+})
+
 module.exports = router;

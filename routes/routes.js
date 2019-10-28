@@ -1,17 +1,17 @@
 const RoutesConf = [
     {
         path: '/user',
-        middleware: './user'
+        router: './user'
     },
     {
         path: '/article',
-        middleware: './article'
+        router: './article'
     }
 ]
 
 const initRoutes = app => {
     RoutesConf.map(item => {
-        app.use(`/api${item.path}`, require(item.middleware));
+        app.use(`/api${item.path}`, require(item.router));
     })
 }
 
