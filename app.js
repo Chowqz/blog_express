@@ -8,12 +8,15 @@ const session = require('express-session');
 const RedisStore = require('connect-redis')(session);
 
 const initRoutes = require('./routes/routes');
+const initScheduleTask = require('./schedule');
 const { execSql } = require('./db/mysql');
 const redisClient = require('./db/redis');
 
 const devMode = process.env.NODE_ENV === 'development';
 
 const app = express();
+
+initScheduleTask();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
