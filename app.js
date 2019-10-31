@@ -16,8 +16,6 @@ const devMode = process.env.NODE_ENV === 'development';
 
 const app = express();
 
-initScheduleTask();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -53,6 +51,7 @@ app.use(session({
 }));
 
 initRoutes(app);
+// initScheduleTask();
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

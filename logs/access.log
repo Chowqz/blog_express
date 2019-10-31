@@ -8,3 +8,7 @@
 ::ffff:10.0.10.255 - - [28/Oct/2019:10:48:07 +0000] "POST /api/article/getArticleDetail HTTP/1.1" 404 1117 "-" "PostmanRuntime/7.6.0"
 ::ffff:10.0.10.255 - - [28/Oct/2019:10:50:49 +0000] "POST /api/article/getArticleDetail HTTP/1.1" 404 1117 "-" "PostmanRuntime/7.6.0"
 ::ffff:10.0.10.255 - - [28/Oct/2019:10:51:05 +0000] "POST /api/article/updateArticle HTTP/1.1" 200 54 "-" "PostmanRuntime/7.6.0"
+::ffff:10.0.10.255 - - [31/Oct/2019:06:29:56 +0000] "GET / HTTP/1.1" 404 41 "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"
+::ffff:10.0.10.255 - - [31/Oct/2019:06:35:41 +0000] "POST /api/comment/delComment HTTP/1.1" 500 62 "-" "PostmanRuntime/7.6.0"
+::ffff:10.0.10.255 - - [31/Oct/2019:07:11:57 +0000] "POST /api/comment/delComment HTTP/1.1" 500 62 "-" "PostmanRuntime/7.6.0"
+::ffff:10.0.10.255 - - [31/Oct/2019:07:13:53 +0000] "GET / HTTP/1.1" 404 1145 "-" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36"

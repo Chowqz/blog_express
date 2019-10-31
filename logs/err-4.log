@@ -1,0 +1,65 @@
+2019-10-31 15:14:46: Thu, 31 Oct 2019 07:14:46 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:14:46: Thu, 31 Oct 2019 07:14:46 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:14:48: Thu, 31 Oct 2019 07:14:48 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:14:48: Thu, 31 Oct 2019 07:14:48 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:14:51: Thu, 31 Oct 2019 07:14:51 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:14:51: Thu, 31 Oct 2019 07:14:51 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:14:53: Thu, 31 Oct 2019 07:14:53 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:14:53: Thu, 31 Oct 2019 07:14:53 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:14:57: Thu, 31 Oct 2019 07:14:57 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:14:57: Thu, 31 Oct 2019 07:14:57 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:14:59: Thu, 31 Oct 2019 07:14:59 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:14:59: Thu, 31 Oct 2019 07:14:59 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:01: Thu, 31 Oct 2019 07:15:01 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:01: Thu, 31 Oct 2019 07:15:01 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:04: Thu, 31 Oct 2019 07:15:04 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:04: Thu, 31 Oct 2019 07:15:04 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:06: Thu, 31 Oct 2019 07:15:06 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:06: Thu, 31 Oct 2019 07:15:06 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+Error: bind EADDRINUSE null:3002
+    at listenOnMasterHandle (net.js:1420:16)
+    at shared (internal/cluster/child.js:115:3)
+    at Worker.send (internal/cluster/child.js:86:7)
+    at process.onInternalMessage (internal/cluster/utils.js:42:8)
+    at emitTwo (events.js:131:20)
+    at process.emit (events.js:214:7)
+    at emit (internal/child_process.js:762:12)
+    at _combinedTickCallback (internal/process/next_tick.js:142:11)
+    at process._tickCallback (internal/process/next_tick.js:181:9)
+2019-10-31 15:15:09: Thu, 31 Oct 2019 07:15:09 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:11: Thu, 31 Oct 2019 07:15:11 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:11: Thu, 31 Oct 2019 07:15:11 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:13: Thu, 31 Oct 2019 07:15:13 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:13: Thu, 31 Oct 2019 07:15:13 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+Error: bind EADDRINUSE null:3002
+    at listenOnMasterHandle (net.js:1420:16)
+    at shared (internal/cluster/child.js:115:3)
+    at Worker.send (internal/cluster/child.js:86:7)
+    at process.onInternalMessage (internal/cluster/utils.js:42:8)
+    at emitTwo (events.js:131:20)
+    at process.emit (events.js:214:7)
+    at emit (internal/child_process.js:762:12)
+    at _combinedTickCallback (internal/process/next_tick.js:142:11)
+    at process._tickCallback (internal/process/next_tick.js:181:9)
+2019-10-31 15:15:16: Thu, 31 Oct 2019 07:15:16 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:16: Thu, 31 Oct 2019 07:15:16 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:19: Thu, 31 Oct 2019 07:15:19 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:19: Thu, 31 Oct 2019 07:15:19 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:21: Thu, 31 Oct 2019 07:15:21 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:21: Thu, 31 Oct 2019 07:15:21 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:23: Thu, 31 Oct 2019 07:15:23 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:24: Thu, 31 Oct 2019 07:15:24 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:24: Thu, 31 Oct 2019 07:15:24 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:27: Thu, 31 Oct 2019 07:15:27 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:27: Thu, 31 Oct 2019 07:15:27 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:29: Thu, 31 Oct 2019 07:15:29 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:29: Thu, 31 Oct 2019 07:15:29 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:32: Thu, 31 Oct 2019 07:15:32 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:33: Thu, 31 Oct 2019 07:15:33 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:33: Thu, 31 Oct 2019 07:15:33 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:36: Thu, 31 Oct 2019 07:15:36 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:36: Thu, 31 Oct 2019 07:15:36 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:38: Thu, 31 Oct 2019 07:15:38 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:38: Thu, 31 Oct 2019 07:15:38 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9
+2019-10-31 15:15:41: Thu, 31 Oct 2019 07:15:41 GMT express-session deprecated undefined resave option; provide resave option at app.js:47:9
+2019-10-31 15:15:41: Thu, 31 Oct 2019 07:15:41 GMT express-session deprecated undefined saveUninitialized option; provide saveUninitialized option at app.js:47:9

@@ -6,6 +6,10 @@ const RoutesConf = [
     {
         path: '/article',
         router: './article'
+    },
+    {
+        path: '/comment',
+        router: './comment'
     }
 ]
 
