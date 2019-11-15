@@ -9,6 +9,8 @@ const RedisStore = require('connect-redis')(session);
 
 const initRoutes = require('./routes/routes');
 const initScheduleTask = require('./schedule');
+const crossOrigin = require('./middleware/crossOrigin')
+
 const { execSql } = require('./db/mysql');
 const redisClient = require('./db/redis');
 
@@ -19,6 +21,8 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.all('*', crossOrigin);
 
 if(devMode) {
     app.use(morgan('dev'));
@@ -37,6 +41,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'assets')));
 
 const sessionStore = new RedisStore({
     client: redisClient

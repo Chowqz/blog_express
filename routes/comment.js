@@ -9,7 +9,6 @@ const path = require('path')
 
 router.post('/commentList', (req, res, next) => {
     let {articleId, pageIndex, pageSize }= req.body;
-    console.log(typeof pageIndex)
     Comment.queryComment(articleId, pageIndex, pageSize).then(queryData => {
         res.json(successModel({
             data: {

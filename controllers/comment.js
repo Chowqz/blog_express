@@ -11,15 +11,12 @@ exports.replyComment = (reply) => {
     return execSql(sql);
 }
 
-exports.queryComment = (articleId, pageIndex = 0, pageSize = 10) => {
+exports.queryComment = (articleId, pageIndex, pageSize) => {
     let sql = `SELECT * FROM comment`;
     if(articleId) {
         sql += ` WHERE articleId = ${articleId}`;
     }
-    if(pageIndex) {
-        sql += `${utils.sqlLimit(pageIndex, pageSize)};`
-    }
-    console.log(sql)
+    sql += `${utils.sqlLimit(pageIndex, pageSize)};`
     return execSql(sql);
 }
 

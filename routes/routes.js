@@ -10,6 +10,10 @@ const RoutesConf = [
     {
         path: '/comment',
         router: './comment'
+    },
+    {
+        path: '/upload',
+        router: './upload'
     }
 ]
 

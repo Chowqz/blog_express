@@ -6,9 +6,17 @@ const loginCheck = require('../middleware/loginCheck');
 const moment = require('moment');
 
 router.post('/articleList', (req, res, next) => {
-    Article.getArticleList().then(queryData => {
+    const { keyword, pageIndex, pageSize } = req.body;
+    Article.getArticleList(keyword, pageIndex, pageSize).then(queryData => {
         res.json(successModel({
-            data: queryData
+            data: {
+                articleList: queryData[0],
+                pageInfo: {
+                    total: queryData[1],
+                    pageIndex: pageIndex || 0,
+                    pageSize: pageSize || 10
+                }
+            }
         }));
     }).catch(err => {
         res.json(errorModel({

@@ -2,7 +2,7 @@ class Utils {
     constructor() {
 
     }
-    sqlLimit(pageIndex, pageSize) {
+    sqlLimit(pageIndex = 0, pageSize = 10) {
         const pageOffset = parseInt(pageSize) * parseInt(pageIndex);
         return ` LIMIT ${pageOffset}, ${parseInt(pageSize)}`;
     }

@@ -1,20 +1,24 @@
 const { execSql, handleEscape } = require('../db/mysql');
+const utils = require('../utils/utils');
 
-exports.getArticleList = () => {
-    let sql = `SELECT
-                    a.articleId,
-                    a.title,
-                    a.authorId,
-                    b.userName AS authorName,
-                    a.categoryId,
-                    c.categoryName,
-                    DATE_FORMAT( a.createTime, '%Y-%m-%d %H:%i:%S' ) AS createTime,
-                    DATE_FORMAT( a.updateTime, '%Y-%m-%d %H:%i:%S' ) AS updateTime 
-                FROM
-                    article a
-                    LEFT JOIN USER b ON a.authorID = b.userId
-                    LEFT JOIN category c ON a.categoryId = c.categoryId;`
-    return execSql(sql);
+exports.getArticleList = (keyword, pageIndex, pageSize) => {
+    let sql1 = `SELECT a.articleId, a.title, a.authorId, b.userName AS authorName, a.categoryId, c.categoryName, DATE_FORMAT( a.createTime, '%Y-%m-%d %H:%i:%S' ) AS createTime, DATE_FORMAT( a.updateTime, '%Y-%m-%d %H:%i:%S' ) AS updateTime FROM article a LEFT JOIN USER b ON a.authorID = b.userId LEFT JOIN category c ON a.categoryId = c.categoryId`;
+    if(keyword) {
+        sql1 += ` WHERE a.title LIKE '%${keyword}%'`
+    }
+    sql1 += `${utils.sqlLimit(pageIndex, pageSize)};`;
+
+    let sql2 = `SELECT COUNT(*) AS total FROM article;`;
+
+    const sql1Promise = execSql(sql1).then(res => {
+        return res;
+    })
+
+    const sql2Promise = execSql(sql2).then(res => {
+        return res[0]['total'];
+    })
+
+    return Promise.all([sql1Promise, sql2Promise]);
 }
 
 exports.getCategoryList = () => {
