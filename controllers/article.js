@@ -2,13 +2,13 @@ const { execSql, handleEscape } = require('../db/mysql');
 const utils = require('../utils/utils');
 
 exports.getArticleList = (keyword, pageIndex, pageSize) => {
-    let sql1 = `SELECT a.articleId, a.title, a.authorId, b.userName AS authorName, a.categoryId, c.categoryName, DATE_FORMAT( a.createTime, '%Y-%m-%d %H:%i:%S' ) AS createTime, DATE_FORMAT( a.updateTime, '%Y-%m-%d %H:%i:%S' ) AS updateTime FROM article a LEFT JOIN USER b ON a.authorID = b.userId LEFT JOIN category c ON a.categoryId = c.categoryId`;
+    let sql1 = `SELECT a.id, a.title, a.authorId, b.userName AS authorName, a.categoryId, c.categoryName, DATE_FORMAT( a.createTime, '%Y-%m-%d %H:%i:%S' ) AS createTime, DATE_FORMAT( a.updateTime, '%Y-%m-%d %H:%i:%S' ) AS updateTime FROM articles a LEFT JOIN users b ON a.authorId = b.id LEFT JOIN categorys c ON a.categoryId = c.id`;
     if(keyword) {
         sql1 += ` WHERE a.title LIKE '%${keyword}%'`
     }
     sql1 += `${utils.sqlLimit(pageIndex, pageSize)};`;
 
-    let sql2 = `SELECT COUNT(*) AS total FROM article;`;
+    let sql2 = `SELECT COUNT(id) AS total FROM articles;`;
 
     const sql1Promise = execSql(sql1).then(res => {
         return res;
@@ -22,7 +22,7 @@ exports.getArticleList = (keyword, pageIndex, pageSize) => {
 }
 
 exports.getCategoryList = () => {
-    let sql = `SELECT * FROM category;`;
+    let sql = `SELECT * FROM categorys;`;
     return execSql(sql);
 }
 
@@ -31,7 +31,7 @@ exports.createArticle = (article) => {
         authorId = handleEscape(article.authorId),
         categoryId = handleEscape(article.categoryId),
         content = handleEscape(article.content);
-    let sql = `INSERT INTO article (title, authorId, categoryId, content) VALUES (${title}, ${authorId}, ${categoryId}, ${content})`;
+    let sql = `INSERT INTO articles (title, authorId, categoryId, content) VALUES (${title}, ${authorId}, ${categoryId}, ${content})`;
     return execSql(sql);
 }
 
@@ -41,13 +41,13 @@ exports.updateArticle = (article) => {
         authorId = handleEscape(article.authorId),
         categoryId = handleEscape(article.categoryId),
         content = handleEscape(article.content);
-    let sql = `UPDATE article SET title=${title}, categoryId=${categoryId}, content=${content} WHERE articleId=${articleId}`;
+    let sql = `UPDATE articles SET title=${title}, categoryId=${categoryId}, content=${content} WHERE id=${articleId}`;
     return execSql(sql);
 }
 
 exports.getArticleDetail = (articleId) => {
     let sql = `SELECT
-                    a.articleId,
+                    a.id AS articleId,
                     a.title,
                     a.authorId,
                     b.userName AS authorName,
@@ -57,17 +57,16 @@ exports.getArticleDetail = (articleId) => {
                     DATE_FORMAT( a.createTime, '%Y-%m-%d %H:%i:%S' ) AS createTime,
                     DATE_FORMAT( a.updateTime, '%Y-%m-%d %H:%i:%S' ) AS updateTime 
                 FROM
-                    article a
-                    LEFT JOIN USER b ON a.authorID = b.userId
-                    LEFT JOIN category c ON a.categoryId = c.categoryId
-                WHERE a.articleId = ${handleEscape(articleId)};`
+                    articles a
+                    LEFT JOIN users b ON a.authorId = b.id
+                    LEFT JOIN categorys c ON a.categoryId = c.id
+                WHERE a.id = ${handleEscape(articleId)};`
     return execSql(sql).then(queryuData => {
         return queryuData[0] || queryuData;
     });
 }
 
 exports.delArticle = (articleId, userId) => {
-    let sql = `DELETE FROM article WHERE articleId = ${articleId} AND authorId = ${userId}`;
-    console.log(sql)
+    let sql = `DELETE FROM articles WHERE id = ${articleId} AND authorId = ${userId}`;
     return execSql(sql);
 }

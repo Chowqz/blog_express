@@ -59,7 +59,7 @@ router.post('/login', (req, res, next) => {
     User.login(req.body.userName, req.body.password).then(queryData => {
         if(queryData.userName) {
             req.session.userName = queryData.userName;
-            req.session.userId = queryData.userId;
+            req.session.userId = queryData.id;
             res.json(successModel({
                 data: queryData,
                 message: 'login success'

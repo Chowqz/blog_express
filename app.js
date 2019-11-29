@@ -12,7 +12,7 @@ const initScheduleTask = require('./schedule');
 const crossOrigin = require('./middleware/crossOrigin')
 
 const { execSql } = require('./db/mysql');
-const redisClient = require('./db/redis');
+const { redisClient } = require('./db/redis');
 
 const devMode = process.env.NODE_ENV === 'development';
 
@@ -49,6 +49,7 @@ const sessionStore = new RedisStore({
 
 app.use(session({
     secret: 'V9dsk_@lq',
+    name: 'blog.sid',
     cookie: {
         maxAge: 24 * 60 * 60 * 1000
     },

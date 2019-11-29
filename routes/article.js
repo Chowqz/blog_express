@@ -4,6 +4,7 @@ const Article = require('../controllers/article');
 const { successModel, errorModel } = require('../models/resModel');
 const loginCheck = require('../middleware/loginCheck');
 const moment = require('moment');
+const { set, get } = require('../db/redis')
 
 router.post('/articleList', (req, res, next) => {
     const { keyword, pageIndex, pageSize } = req.body;
